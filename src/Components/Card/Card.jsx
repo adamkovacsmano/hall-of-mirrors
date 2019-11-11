@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import adam from "../../Images/adam-kovacs.png";
 import { styles } from "./Card.module.scss";
 
 class Card extends Component {
@@ -18,8 +17,8 @@ class Card extends Component {
       <img
         onClick={this.handleClick}
         style={modifiedStyle}
-        src={adam}
-        alt="adam"
+        src={this.props.data.photoURL}
+        alt=""
       ></img>
     );
   }

@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
-import Cards from "../Cards";
+import Card from "../../Components/Card";
 import Login from "../../Components/Login";
 import Header from "../../Components/Header";
 import firebase, { provider } from "../../firebase";
+import { firestore } from "../../firebase";
 
 class App extends React.Component {
   state = {
-    user: null
+    user: {}
   };
 
   logIn = () => {
@@ -27,7 +28,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Login logIn={this.logIn} />
-        <Cards />
+        <Card data={this.state.user} />
       </div>
     );
   }
